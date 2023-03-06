@@ -3,17 +3,33 @@ public class MyClass {
 		System.out.println("Using a method outside main method");
 	}
 
+	public static void exampleMethodWithParameter(String x) {
+		System.out.println("The parameter passed is " + x);
+	}
+
+	// It is not void, but int
+	public static int exampleMethodReturningValue(int x, int y) {
+		return x + y;
+	}
+
+
+
 	public static void main(String[] args) {
-		System.out.println("Using args from main method:");
-		System.out.println("Hello world, my name is " + args[0] + "!");
+		if (args.length != 0) {
+			System.out.println("Using args from main method:");
+			System.out.println("Hello world, my name is " + args[0] + "!");
 
-		System.out.println("");
-		System.out.println("For-each loop");
-		// For-each loop
-		for (String s : args) {
-			System.out.println(s);
+			System.out.println("");
+			System.out.println("For-each loop");
+			// For-each loop
+			for (String s : args) {
+				System.out.println(s);
+			}
+
+		} else {
+			System.out.println("Please insert args to see for-each loop and args being used");
 		}
-
+		
 		System.out.println("");
 		System.out.println("Continue statement:");
 		// Continue statemetn
@@ -41,7 +57,15 @@ public class MyClass {
 		System.out.println("");
 		System.out.println("Method outside main(String[] args):");
 		// Using the exampleMethod
-
 		exampleMethod();
+
+		System.out.println("");
+		System.out.println("Method using parameters:");
+		exampleMethodWithParameter("Vazazul");
+
+		System.out.println("");
+		System.out.println("Method return a value:");
+		int n = exampleMethodReturningValue(2,3);
+		System.out.println("Value returned is " + n);
 	}
 }
