@@ -3,12 +3,14 @@ public class Bicicleta {
 	private int cadencia;
 	private int marcha;
 	private int velocidade;
+	private static int quantidade; // Variável de classe, campo estático
 
 	// Atribuindo valores iniciais dos atributos da classe Bicicleta ao criar um novo objeto
-	public Bicicleta(int cadencia, int velocidadeInicial, int marchaInicial) {
+	public Bicicleta(int cadencia, int velocidadeInicial, int marchaInicial, int quantidadeInicial) {
 		this.cadencia = cadencia; // Com sobreamento de campo
 		marcha = marchaInicial; // Sem sombreamento de campo
 		velocidade = velocidadeInicial;
+		quantidade = quantidadeInicial;
 	}
 
 	// Construtor com valores default
@@ -16,6 +18,7 @@ public class Bicicleta {
 		marcha = 1;
 		cadencia = 0;
 		velocidade = 0;
+		quantidade++;
 	}
 
 	// Getter para os atributos
@@ -60,8 +63,21 @@ public class Bicicleta {
 		return soma;
 	}
 
+	// Método para testar o que acontece quando utilizamos um método para alterar um atributo dentro de uma classe
 	public static void incrementarAlgo(int x) {
+		// o x passado aqui, independente de ser um valor ou uma variável, não terá sua referência
+		// ele é passado byVal, não byRef
 		x++;
 		System.out.println("Valor da variável incrementada dentro da função: " + x);
+	}
+
+	// Método para se testar o retorno dele mesmo
+	public static String returnInputLowerCase(String y) {
+		return y.toLowerCase();
+	}
+
+	// Retorna o campo estático da classe
+	public static int getQuantidade() {
+		return quantidade;
 	}
 }
