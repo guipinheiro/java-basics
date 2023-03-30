@@ -35,7 +35,7 @@ public class FluxControlInstructions {
 		System.out.println(mesString);
 
 		System.out.println("");
-		System.out.println("3. Loops (specifically for-each");
+		System.out.println("3. Loops (specifically for-each):");
 		int[] numbers = {1,2,3,4,5,6,7,8,9,10};
 		for (int n : numbers) {
 			System.out.println(n);
